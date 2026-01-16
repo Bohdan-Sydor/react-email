@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 45" width="160" height="45">
+  <!-- "just" banner -->
+  <rect x="0" y="8" width="48" height="22" rx="2" ry="2" fill="#5bc0de"/>
+  <text x="24" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" font-style="italic">just</text>
+  
+  <!-- "answer" text -->
+  <text x="53" y="26" font-family="Georgia, serif" font-size="22" fill="#666666" font-style="italic">answer</text>
+</svg>

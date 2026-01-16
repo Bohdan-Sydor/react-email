@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60">
+  <!-- Speech bubble background -->
+  <rect x="4" y="4" width="162" height="38" rx="4" ry="4" fill="#ffffff" stroke="#d4a847" stroke-width="2"/>
+  <!-- Bubble tail -->
+  <polygon points="20,42 30,42 20,55" fill="#ffffff" stroke="#d4a847" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="18" y="40" width="14" height="4" fill="#ffffff"/>
+  
+  <!-- ASK A DOCTOR text -->
+  <text x="85" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d4a847" text-anchor="middle" letter-spacing="1">ASK A DOCTOR</text>
+  
+  <!-- help text -->
+  <text x="32" y="55" font-family="Arial, sans-serif" font-size="12" fill="#d4a847">help</text>
+</svg>
