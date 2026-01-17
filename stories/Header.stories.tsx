@@ -27,6 +27,10 @@ const meta: Meta<HeaderProps> = {
       control: "text",
       description: "Alt text for the logo image",
     },
+    logoHeight: {
+      control: "text",
+      description: "Height of the logo image",
+    },
   },
   decorators: [
     (Story, context) => (
@@ -52,5 +56,13 @@ export const CustomLogo: Story = {
   args: {
     logoSrc: "https://ww2-secure.justanswer.com/static/Touchpoint/Fully_Branded_Javatar/Logo_JAvatar_www_askadoctor_help.png",
     logoAlt: "JustAnswer Logo",
+  },
+};
+
+export const Fount: Story = {
+  args: {
+    logoSrc: "https://ww2-secure.justanswer.com/static/Touchpoint/Fount/Logos/fount%20logo%20black.png",
+    logoAlt: "Fount Logo",
+    logoHeight: "31px",
   },
 };

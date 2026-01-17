@@ -30,6 +30,10 @@ const meta: Meta<ButtonProps> = {
       control: "text",
       description: "Button label text",
     },
+    backgroundColor: {
+      control: "color",
+      description: "Background color of the button",
+    },
   },
   decorators: [
     (Story, context) => (
@@ -59,5 +63,13 @@ export const FullWidth: Story = {
     href: "https://example.com",
     children: "Full Width Button",
     fullWidth: true,
+  },
+};
+
+export const Green: Story = {
+  args: {
+    href: "https://example.com",
+    children: "Get Started",
+    backgroundColor: "#3FD056",
   },
 };

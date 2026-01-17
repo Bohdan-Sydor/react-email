@@ -4,18 +4,20 @@ export interface ButtonProps {
   href: string;
   children: React.ReactNode;
   fullWidth?: boolean;
+  backgroundColor?: string;
 }
 
 export const Button = ({
   href,
   children,
   fullWidth = false,
+  backgroundColor = "#E85C41",
 }: ButtonProps) => {
   return (
     <ReactEmailButton
       href={href}
       style={{
-        backgroundColor: "#E85C41",
+        backgroundColor,
         color: "#ffffff",
         fontFamily: "Helvetica, Arial, sans-serif",
         fontSize: "16px",

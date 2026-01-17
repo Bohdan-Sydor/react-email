@@ -9,10 +9,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "email": "email dev --dir src/emails --port 3000"
   },
   "dependencies": {
     "@react-email/components": "^1.0.4",
+    "@react-email/preview-server": "^5.2.5",
     "@react-email/render": "^2.0.2",
     "@react-email/tailwind": "^2.0.3",
     "react": "^19.2.0",
