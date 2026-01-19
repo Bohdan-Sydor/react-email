@@ -1,6 +1,7 @@
 import { Img, Link, Section, Text, Row, Column } from "@react-email/components";
 
 export interface FooterProps {
+  variant?: "default" | "fount";
   logoSrc?: string;
   logoAlt?: string;
   companyName?: string;
@@ -8,19 +9,22 @@ export interface FooterProps {
   address?: string;
   unsubscribeUrl?: string;
   privacyPolicyUrl?: string;
+  contactUrl?: string;
   websiteUrl?: string;
   appStoreUrl?: string;
   googlePlayUrl?: string;
 }
 
 export const Footer = ({
+  variant = "default",
   logoSrc = "https://ww2.justanswer.com//static/Touchpoint/3rd_Party_Personalization/logo-just-answer.png",
   logoAlt = "JustAnswer",
-  companyName = "JustAnswer LLC",
-  copyrightYears = "2003-2026",
+  companyName = variant === "fount" ? "Fount" : "JustAnswer LLC",
+  copyrightYears = variant === "fount" ? "2024-2026" : "2003-2026",
   address = "440 N Barranca Ave #7508, Covina, CA 91723",
   unsubscribeUrl = "#",
   privacyPolicyUrl = "#",
+  contactUrl = "#",
   websiteUrl = "https://www.justanswer.com",
   appStoreUrl = "https://apps.apple.com/app/justanswer",
   googlePlayUrl = "https://play.google.com/store/apps/details?id=com.justanswer.mobile",
@@ -28,16 +32,47 @@ export const Footer = ({
   const textStyle = {
     fontFamily: "Helvetica, Arial, sans-serif",
     fontSize: "14px",
-    lineHeight: "20px",
+    lineHeight: variant === "fount" ? "22px" : "20px",
     color: "#666666",
     margin: "0",
     textAlign: "center" as const,
   };
 
   const linkStyle = {
-    color: "#00B4D8",
+    color: variant === "fount" ? "#2E8B57" : "#00B4D8",
     textDecoration: "none",
   };
+
+  if (variant === "fount") {
+    return (
+      <Section style={{ padding: "24px 20px" }}>
+        {/* Copyright */}
+        <Text style={textStyle}>
+          © {copyrightYears} {companyName}. All rights reserved.
+        </Text>
+
+        {/* Address */}
+        <Text style={{ ...textStyle, marginTop: "2px" }}>
+          {address}
+        </Text>
+
+        {/* Links */}
+        <Text style={{ ...textStyle, marginTop: "8px" }}>
+          <Link href={unsubscribeUrl} style={linkStyle}>
+            Unsubscribe
+          </Link>
+          {" | "}
+          <Link href={privacyPolicyUrl} style={linkStyle}>
+            Privacy Policy
+          </Link>
+          {" | "}
+          <Link href={contactUrl} style={linkStyle}>
+            Contact Us
+          </Link>
+        </Text>
+      </Section>
+    );
+  }
 
   return (
     <Section style={{ backgroundColor: "#f5f5f5", padding: "32px 20px" }}>

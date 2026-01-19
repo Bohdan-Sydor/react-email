@@ -10,22 +10,12 @@ export interface ButtonProps {
 export const Button = ({
   href,
   children,
-  backgroundColor = "#E85C41",
+  // backgroundColor = "#E85C41",
 }: ButtonProps) => {
   return (
     <ReactEmailButton
       href={href}
-      style={{
-        backgroundColor,
-        color: "#ffffff",
-        // height: "48px",
-        fontSize: "16px",
-        fontWeight: "bold",
-        // lineHeight: "18px",
-        textAlign: "center",
-        borderRadius: "4px",
-        padding: "15px 30px",
-      }}
+      className="px-6 py-3 text-white font-bold text-center rounded-md font-sans bg-primary"
     >
       {children}
     </ReactEmailButton>

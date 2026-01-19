@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button, ButtonProps } from "../src/components/email/Button";
 import { EmailPreview } from "./EmailPreview";
 import { Section } from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
 
 const meta: Meta<ButtonProps> = {
   title: "Email Components/Button",
@@ -37,12 +36,10 @@ const meta: Meta<ButtonProps> = {
   },
   decorators: [
     (Story, context) => (
-      <EmailPreview width={400}>
-        <Tailwind>
+      <EmailPreview width={400} theme={context.parameters.theme ?? "justanswer"}>
           <Section className="p-8 text-center">
             <Story {...context} />
           </Section>
-        </Tailwind>
       </EmailPreview>
     ),
   ],
@@ -58,18 +55,13 @@ export const Default: Story = {
   },
 };
 
-export const FullWidth: Story = {
-  args: {
-    href: "https://example.com",
-    children: "Full Width Button",
-    fullWidth: true,
-  },
-};
-
-export const Green: Story = {
+export const Fount: Story = {
   args: {
     href: "https://example.com",
     children: "Get Started",
     backgroundColor: "#3FD056",
+  },
+  parameters: {
+    theme: "fount",
   },
 };

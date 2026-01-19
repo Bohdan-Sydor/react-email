@@ -12,19 +12,24 @@ const meta: Meta<FooterProps> = {
     docs: {
       description: {
         component:
-          "A footer component with logo, copyright, links, and app store badges for email campaigns.",
+          "A footer component with logo, copyright, links, and app store badges for email campaigns. Supports 'default' and 'fount' variants.",
       },
     },
   },
   tags: ["autodocs"],
   argTypes: {
+    variant: {
+      control: "select",
+      options: ["default", "fount"],
+      description: "Footer variant style",
+    },
     logoSrc: {
       control: "text",
-      description: "The URL of the logo image",
+      description: "The URL of the logo image (default variant only)",
     },
     logoAlt: {
       control: "text",
-      description: "Alt text for the logo image",
+      description: "Alt text for the logo image (default variant only)",
     },
     companyName: {
       control: "text",
@@ -46,17 +51,21 @@ const meta: Meta<FooterProps> = {
       control: "text",
       description: "URL for privacy policy link",
     },
+    contactUrl: {
+      control: "text",
+      description: "URL for contact us link (fount variant only)",
+    },
     websiteUrl: {
       control: "text",
-      description: "URL for the main website link",
+      description: "URL for the main website link (default variant only)",
     },
     appStoreUrl: {
       control: "text",
-      description: "URL for App Store download",
+      description: "URL for App Store download (default variant only)",
     },
     googlePlayUrl: {
       control: "text",
-      description: "URL for Google Play download",
+      description: "URL for Google Play download (default variant only)",
     },
   },
   decorators: [
@@ -74,23 +83,14 @@ export default meta;
 type Story = StoryObj<FooterProps>;
 
 export const Default: Story = {
-  args: {},
-};
-
-export const CustomCompany: Story = {
   args: {
-    companyName: "Your Company Inc",
-    copyrightYears: "2020-2026",
-    address: "123 Main Street, New York, NY 10001",
-    websiteUrl: "https://www.example.com",
+    variant: "default",
   },
 };
 
-export const WithCustomLinks: Story = {
+export const Fount: Story = {
   args: {
-    unsubscribeUrl: "https://www.justanswer.com/unsubscribe",
-    privacyPolicyUrl: "https://www.justanswer.com/privacy",
-    appStoreUrl: "https://apps.apple.com/app/justanswer",
-    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.justanswer.mobile",
+    variant: "fount",
   },
 };
+

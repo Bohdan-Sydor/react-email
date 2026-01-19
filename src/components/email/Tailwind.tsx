@@ -26,6 +26,9 @@ export const Tailwind = ({ children, theme = "justanswer" }: TailwindProps) => {
     <ReactEmailTailwind
       config={{
         theme: {
+          fontFamily: {
+            sans: ["Helvetica", "Arial", "sans-serif"],
+          },
           extend: {
             colors: {
               primary,
