@@ -10,7 +10,6 @@ export interface ButtonProps {
 export const Button = ({
   href,
   children,
-  fullWidth = false,
   backgroundColor = "#E85C41",
 }: ButtonProps) => {
   return (
@@ -19,16 +18,13 @@ export const Button = ({
       style={{
         backgroundColor,
         color: "#ffffff",
-        fontFamily: "Helvetica, Arial, sans-serif",
+        // height: "48px",
         fontSize: "16px",
         fontWeight: "bold",
-        lineHeight: "48px",
-        display: "inline-block",
-        textDecoration: "none",
+        // lineHeight: "18px",
         textAlign: "center",
         borderRadius: "4px",
-        padding: "0 40px",
-        width: fullWidth ? "100%" : "auto",
+        padding: "15px 30px",
       }}
     >
       {children}
