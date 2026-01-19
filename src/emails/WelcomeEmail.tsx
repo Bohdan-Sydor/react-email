@@ -9,20 +9,14 @@ import {
   Preview,
   Hr,
 } from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
+import { Tailwind } from "../components/email";
 import { Header, Footer, Button } from "../components/email";
 
-export interface WelcomeEmailProps {
-  userName?: string;
-  companyName?: string;
-  ctaUrl?: string;
-}
+export const WelcomeEmail = () => {
+  const userName = "John";
+  const companyName = "Acme Inc";
+  const ctaUrl = "https://example.com/get-started";
 
-export const WelcomeEmail = ({
-  userName = "there",
-  companyName = "Acme Inc",
-  ctaUrl = "https://example.com/get-started",
-}: WelcomeEmailProps) => {
   return (
     <Html>
       <Head />
@@ -32,12 +26,9 @@ export const WelcomeEmail = ({
           <Container className="mx-auto max-w-xl bg-white">
             {/* Header */}
             <Header
-              companyName={companyName}
-              logoUrl="https://via.placeholder.com/140x40/0284c7/ffffff?text=ACME"
-              links={[
-                { label: "Help", href: "https://example.com/help" },
-                { label: "Account", href: "https://example.com/account" },
-              ]}
+              logoSrc="https://via.placeholder.com/140x40/0284c7/ffffff?text=ACME"
+              logoAlt={companyName}
+              logoHeight="40px"
             />
 
             {/* Main Content */}
@@ -89,14 +80,11 @@ export const WelcomeEmail = ({
             <Footer
               companyName={companyName}
               address="123 Main Street, San Francisco, CA 94102"
-              socialLinks={[
-                { platform: "twitter", href: "https://twitter.com/example" },
-                { platform: "linkedin", href: "https://linkedin.com/example" },
-                { platform: "github", href: "https://github.com/example" },
-              ]}
-              privacyUrl="https://example.com/privacy"
-              termsUrl="https://example.com/terms"
               unsubscribeUrl="https://example.com/unsubscribe"
+              privacyPolicyUrl="https://example.com/privacy"
+              websiteUrl="https://example.com"
+              appStoreUrl="https://apps.apple.com/app/justanswer"
+              googlePlayUrl="https://play.google.com/store/apps/details?id=com.justanswer.mobile"
             />
           </Container>
         </Body>
