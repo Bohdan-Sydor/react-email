@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { render } from "@react-email/render";
 import { WelcomeEmail } from "./emails/WelcomeEmail";
-import { WelcomeDeposit } from "./emails/WelcomeDeposit";
 
 type EmailTemplate = "welcome" | "welcomeDeposit";
 type PreviewMode = "rendered" | "html";
@@ -36,9 +35,6 @@ function App() {
       switch (activeTemplate) {
         case "welcome":
           rendered = await render(<WelcomeEmail />);
-          break;
-        case "welcomeDeposit":
-          rendered = await render(<WelcomeDeposit />);
           break;
       }
 
@@ -254,16 +250,16 @@ function App() {
                   html ? (
                     <iframe
                       srcDoc={html}
-                      className="w-[600px] h-[700px] bg-white border border-gray-200 rounded shadow-lg"
+                      className="w-[600px] h-[900px] bg-white border border-gray-200 rounded shadow-lg"
                       title="Email Preview"
                     />
                   ) : (
-                    <div className="w-[600px] h-[700px] bg-white border border-gray-200 rounded shadow-lg flex items-center justify-center">
+                    <div className="w-[600px] h-[900px] bg-white border border-gray-200 rounded shadow-lg flex items-center justify-center">
                       <p className="text-gray-400">Loading preview...</p>
                     </div>
                   )
                 ) : (
-                  <div className="w-full bg-gray-900 rounded-xl p-4 overflow-auto max-h-[700px]">
+                  <div className="w-full bg-gray-900 rounded-xl p-4 overflow-auto max-h-[900px]">
                     <pre className="text-xs text-gray-300 whitespace-pre-wrap">
                       {html}
                     </pre>
