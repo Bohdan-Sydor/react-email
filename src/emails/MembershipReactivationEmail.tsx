@@ -8,9 +8,8 @@ import {
   Heading,
   Preview,
   Link,
-  Img,
 } from "@react-email/components";
-import { Tailwind, Footer, Button, Card } from "../components/email";
+import { Tailwind, Footer, Button, Card, Header } from "../components/email";
 
 interface MembershipReactivationEmailProps {
   monthlyCharge?: string;
@@ -36,11 +35,7 @@ export const MembershipReactivationEmail = ({
           <Container className="mx-auto max-w-xl">
             {/* Header */}
             <Section className="px-8 py-6">
-              <Img
-                src="https://ww2-secure.justanswer.com/static/Touchpoint/Fully_Branded_Javatar/Logo_JAvatar_www_askadoctor_help.png"
-                alt="Ask A Doctor Help - JustAnswer"
-                style={{ height: "40px", width: "auto" }}
-              />
+              <Header logoAlt="Ask A Doctor Help - JustAnswer" />
             </Section>
 
             {/* Main Content Card */}

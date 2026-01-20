@@ -1,5 +1,4 @@
 // Email templates showcasing available components
-export { WelcomeEmail } from "./WelcomeEmail";
 export { OrderConfirmationEmail } from "./OrderConfirmationEmail";
 export { PasswordResetEmail } from "./PasswordResetEmail";
 export { ExpertResponseEmail } from "./ExpertResponseEmail";
